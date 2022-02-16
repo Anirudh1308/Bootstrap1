@@ -29,8 +29,8 @@
                     <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span> Menu</a></li>
                     <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
-                <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
+                <span class="navbar-text" id="sign-in-logo">
+                    <a>
                     <span class="fa fa-sign-in"></span> Login</a>
                 </span>
             </div>            
@@ -42,8 +42,8 @@
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Login </h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title text-white">Login </h4>
+                    <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
                     <form>
@@ -87,7 +87,7 @@
                 <div class="col-12 col-sm-3 align-self-center">
                     <!--<a role="button"class="btn btn-block nav-link btn-warning"
                      data-toggle="modal" data-target="reserveModal" role="button"><h4>Reserve Table</h4></a>-->
-                     <button type="button" class="btn btn-block nav-link btn-warning" data-toggle="modal" data-target="#reserveModal">
+                     <button type="button" class="btn btn-block nav-link btn-warning" id="Reserve-btn">
                         <h4>Reserve Table</h4>
                      </button>
                 </div>
@@ -205,8 +205,8 @@
             <div class="modal-dialog modal-lg" role="content">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title">Reserve a Table </h4>
-                        <button type="button" class="close" data-dismiss="modal">
+                        <h4 class="modal-title text-white">Reserve a Table </h4>
+                        <button type="button" class="close text-white" data-dismiss="modal">
                             &times;
                         </button>
                     </div>
@@ -242,7 +242,7 @@
 
                             <div class="form-group row">
                                 <label for="smoke" class="col-12 col-sm-2 col-form-label">Section</label>
-                                <div class="col-12 col-sm-6" id="smoke-section">
+                                <div class="col-12 col-sm-6 btn-group" id="smoke-section" data-toggle="buttons">
                                     <input class="btn btn-success" type="button" value="Non Smoking">
                                     <input class="btn btn-danger" type="button" value="Smoking">
                                 </div>
@@ -384,6 +384,20 @@
                 }
             });
         });
+    </script>
+    <script>
+        $(document).ready(function(){
+            $("#sign-in-logo").click(function(){
+               $("#loginModal").modal('show');
+        });
+       });
+    </script>
+    <script>
+        $(document).ready(function(){
+            $("#Reserve-btn").click(function(){
+               $("#reserveModal").modal('show');
+        });
+       });
     </script>
 
 </body>
